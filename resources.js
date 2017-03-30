@@ -1,5 +1,5 @@
 const router = require('express').Router();
 
-router.use('/api', require('./controller/api/index.js'));
+router.use('/events', require('./controllers/events/index.js'));
 
 module.exports = router;
