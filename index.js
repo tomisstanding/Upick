@@ -4,9 +4,11 @@ const bodyParser     = require('body-parser');
 const logger         = require('morgan');
 const path           = require('path');
 const methodOverride = require ('method-override');
+const fetch          = require('node-fetch');
+const eventful       = require('eventful-node');
+
 const app            = express();
 const PORT           = process.env.PORT || 8000;
-const fetch          = require('node-fetch');
 
 // config morgan to log in our terminal
 app.use(logger('dev'));
