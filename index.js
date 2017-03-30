@@ -5,7 +5,6 @@ const logger         = require('morgan');
 const path           = require('path');
 const methodOverride = require ('method-override');
 const fetch          = require('node-fetch');
-const eventful       = require('eventful-node');
 
 const app            = express();
 const PORT           = process.env.PORT || 8000;
