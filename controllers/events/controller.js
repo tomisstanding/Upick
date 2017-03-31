@@ -3,11 +3,15 @@ const eventful  = require('eventful-node');
 let controller = {};
 
 controller.findEvents = (req, res) => {
+  console.log(req.query.location);
   const client = new eventful.Client(process.env.API_KEY);
 
 // Change Brooklyn to req.query.location after it works
   client.searchEvents({
-    location: 'Brooklyn',
+    // location: req.query.location,
+    location: req.query.location,
+    // page_size = number of results
+    page_size: '3',
     within: '1',
     units: 'miles'
   },

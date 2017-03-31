@@ -5,9 +5,12 @@ const logger         = require('morgan');
 const path           = require('path');
 const methodOverride = require ('method-override');
 const fetch          = require('node-fetch');
+const cors           = require('cors');
 
 const app            = express();
 const PORT           = process.env.PORT || 8000;
+
+app.use(cors());
 
 // config morgan to log in our terminal
 app.use(logger('dev'));
@@ -25,6 +28,7 @@ app.use(methodOverride('_method'));
 
 // link to resources
 app.use('/', require('./resources'));
+
 
 // config local host port
 app.listen(PORT, () => {
