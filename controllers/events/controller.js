@@ -6,11 +6,11 @@ controller.findEvents = (req, res) => {
   const client = new eventful.Client(process.env.API_KEY);
 
   console.log(req.query.date);
-// hardcoded date to future for now
+// hardcoded date to today for now until calendar is working
   client.searchEvents({
     keywords: req.query.keywords,
     location: req.query.location,
-    date: 'future',
+    date: 'today',
     within: '5',
     units: 'miles'
   },
