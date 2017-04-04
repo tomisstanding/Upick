@@ -5,20 +5,17 @@ let controller = {};
 controller.findEvents = (req, res) => {
   const client = new eventful.Client(process.env.API_KEY);
 
-// Change Brooklyn to req.query.location after it works
-
-  console.log(req.query);
-
+  console.log(req.query.date);
+// hardcoded date to future for now
   client.searchEvents({
-    // location: req.query.location,
+    keywords: req.query.keywords,
     location: req.query.location,
-    category: req.query.category,
-    date: req.query.date,
-    page_size: '3',
-    within: '1',
+    date: 'future',
+    within: '5',
     units: 'miles'
   },
   (err, data) => {
+    console.log(err);
     if (err) {
       res.status(400).json({error: err});
     } else {
