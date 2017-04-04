@@ -7,4 +7,4 @@ const db = pgp({
   host: 'localhost'
 })
 
-module .export = db;
+module.export = db;
